@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connexion : les valeurs viennent des profils Maven (voir pom.xml) -->
+        <property name="hibernate.connection.driver_class">${db.driver}</property>
+        <property name="hibernate.connection.url">${db.url}</property>
+        <property name="hibernate.connection.username">${db.username}</property>
+        <property name="hibernate.connection.password">${db.password}</property>
+
+        <property name="hibernate.dialect">${db.dialect}</property>
+
+        <!-- update : Hibernate cree/complete le schema au demarrage -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Affiche le SQL genere dans la console -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Entites du projet : une ligne de mapping par classe -->
+        <mapping class="org.example.entities.Categorie"/>
+        <mapping class="org.example.entities.Produit"/>
+        <mapping class="org.example.entities.Commande"/>
+        <mapping class="org.example.entities.CommandeProduit"/>
+        <mapping class="org.example.entities.User"/>
+        <mapping class="org.example.entities.Client"/>
+        <mapping class="org.example.entities.Fournisseur"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,14 @@
+# Build Maven
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs et fichiers temporaires
+*.log
+hs_err_pid*.log
